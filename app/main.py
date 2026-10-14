@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from datetime import datetime, timezone
 
 app = FastAPI()
 
@@ -18,3 +19,7 @@ async def healthz():
 @app.get("/notes")
 async def notes():
     return NOTES
+
+@app.get("/time")
+async def server_time():
+    return {"utc": datetime.now(timezone.utc).isoformat()}

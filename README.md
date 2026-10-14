@@ -2,7 +2,7 @@ W "README.md" @'
 # devOps-service
 
 ## What it does
-This is a small HTTP service I built with FastAPI for my INF 345 DevOps course. It has three endpoints: `GET /` returns a greeting, `GET /healthz` returns `{"status": "ok"}` and is the health check I will use later for Docker and Kubernetes, and `GET /notes` returns a hard-coded list of notes. It has no database. I keep it small on purpose, because the course is about the path from my laptop to production, not about the app itself.
+This is a small HTTP service I built with FastAPI for my INF 345 DevOps course. It has three endpoints: `GET /` returns a greeting, `GET /healthz` returns `{"status": "ok"}` and is the health check I will use later for Docker and Kubernetes, and `GET /notes` returns a hard-coded list of notes. It has no database. I keep it small on purpose, because the course is about the path from my laptop to production, not about the app itself.`GET /time` returns the current UTC time.
 
 ## How to run
 I start the service with one command:
