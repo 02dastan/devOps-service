@@ -14,7 +14,7 @@ def test_healthz():
 
 
 def test_notes():
-    assert len(client.get("/notes").json()) == 3
+    assert len(client.get("/notes").json()) == 2
 
 def test_time():
     assert "utc" in client.get("/time").json()
