@@ -9,6 +9,10 @@ def test_root():
     assert r.status_code == 200 and r.json()["message"]
 
 
+def test_root_default_greeting():
+    assert client.get("/").json()["message"] == "Hello, DevOps"
+
+
 def test_healthz():
     assert client.get("/healthz").json() == {"status": "ok"}
 

@@ -19,7 +19,10 @@ I run the tests with:
 ./scripts/test.sh
 ```
 
-It installs the dependencies, runs pytest (4 tests that call the real app), and prints `TESTS: n/n`. It exits with code 0 if everything passes and a non-zero code if something fails.
+It installs the dependencies, runs pytest (5 tests that call the real app), and prints `TESTS: n/n`. It exits with code 0 if everything passes and a non-zero code if something fails.
+
+## Greeting
+`GET /` returns the text from the `GREETING` environment variable. If it is not set, the answer is `Hello, DevOps`. For example, `GREETING="Hi there" ./scripts/run.sh` changes it.
 
 ## Port
 The service reads the port from the `PORT` environment variable and uses 8080 if it is not set. For example, `PORT=9000 ./scripts/run.sh` starts it on port 9000.
