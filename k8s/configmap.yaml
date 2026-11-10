@@ -1,0 +1,8 @@
+# settings for the service, kept outside the image
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops-service-config
+data:
+  PORT: "8080"
+  GREETING: "Hello from Kubernetes"
