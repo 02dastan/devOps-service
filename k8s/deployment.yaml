@@ -18,7 +18,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: app
-          image: ghcr.io/02dastan/devops-service:2d42308b54b10a30aaf2c4e63571001df5064222
+          image: ghcr.io/02dastan/devops-service:c6c753ef7c0d3573d826fb5ab4fd0e75b59f3544
           ports:
             - name: http
               containerPort: 8080
