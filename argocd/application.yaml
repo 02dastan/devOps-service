@@ -1,0 +1,19 @@
+# M5: Argo CD deploys the k8s/ folder of this repository and keeps the cluster equal to Git.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-service           # 1. this app's name in Argo CD
+  namespace: argocd              # 2. the namespace where Argo CD looks for Applications
+spec:
+  project: default               # Argo CD's built-in project (the marker uses a strict one)
+  source:
+    repoURL: https://github.com/02dastan/devOps-service   # 3. my repository: public, https
+    targetRevision: main         # 4. the branch Argo CD follows: the one I merge into
+    path: k8s                    # 5. the folder with my M4 manifests
+  destination:
+    server: https://kubernetes.default.svc   # "this cluster": the one Argo CD runs in
+    namespace: default           # 6. where my app runs: where I deployed it in Week 9
+  syncPolicy:
+    automated:                   # pull automatically: nobody presses "Sync"
+      prune: true                # 7. delete from the cluster what I delete from Git
+      selfHeal: true             # 8. undo changes made by hand in the cluster
